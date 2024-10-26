@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.active {
+  @apply bg-white
+    opacity-50
+    transition-opacity
+    duration-300;
+}
+
+.ficon:hover {
+  filter: invert(19%) sepia(86%) saturate(441%) hue-rotate(13deg)
+    brightness(92%) contrast(88%);
+}

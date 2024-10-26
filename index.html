@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="./css/style.css" />
+
+    <title>Frontend Mentor | E-commerce product page</title>
+
+    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
+    <style>
+      .attribution {
+        font-size: 11px;
+        text-align: center;
+      }
+      .attribution a {
+        color: hsl(228, 45%, 44%);
+      }
+      /* *{
+        padding: 0;
+        margin: 0;
+        box-sizing: border-box;
+      } */
+      
+    </style>
+  </head>
+  <body class=" overflow-x-hidden">
+    <div class="card-container relative">
+      <!-- Navbar -->
+
+      <div
+        class="relative md:flex md:items-center mt-4 md:pt-6 md:mx-20 md:justify-between md:border-b md:border-darkGrayishBlue md:py-6 flex items-center justify-center px-4 gap-28"
+      >
+        <!-- Navbr left side -->
+        <nav class="flex gap-12 items-center">
+          <div class="flex gap-4 items-center">
+            <img src="./images/icon-menu.svg" class="md:hidden h-4 toggle-btn fill-current text-black" />
+            <img src="./images/logo.svg" class="h-4" />
+          </div>
+            <ul
+              class="md:flex md:items-center flex gap-10 text-neutral-darkGrayishBlue hidden"
+            >
+              <li class="relative group">
+                <a href="#" class="text-gray-700">Collections</a>
+                <!-- Border Bottom Effect -->
+                <span
+                  class="absolute left-0 right-0 -bottom-7 h-1 bg-orange-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"
+                ></span>
+              </li>
+              <li class="relative group">
+                <a href="#" class="text-gray-700">Men</a>
+                <!-- Border Bottom Effect -->
+                <span
+                  class="absolute left-0 right-0 -bottom-7 h-1 bg-orange-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"
+                ></span>
+              </li>
+              <li class="relative group">
+                <a href="#" class="text-gray-700">Women</a>
+                <!-- Border Bottom Effect -->
+                <span
+                  class="absolute left-0 right-0 -bottom-7 h-1 bg-orange-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"
+                ></span>
+              </li>
+              <li class="relative group">
+                <a href="#" class="text-gray-700">About</a>
+                <!-- Border Bottom Effect -->
+                <span
+                  class="absolute left-0 right-0 -bottom-7 h-1 bg-orange-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"
+                ></span>
+              </li>
+              <li class="relative group">
+                <a href="#" class="text-gray-700">Contact</a>
+                <!-- Border Bottom Effect -->
+                <span
+                  class="absolute left-0 right-0 -bottom-7 h-1 bg-orange-500 scale-x-0 group-hover:scale-x-100 transition-transform origin-left duration-300"
+                ></span>
+              </li>
+            </ul>
+          </nav>
+
+          <!-- Navbar Right Side -->
+          <div class="flex items-center md:gap-10 gap-4 relative cursor-pointer">
+            <button class="nav-cart-count bg-orange-500 px-2 rounded-full absolute -top-4 hidden"></button>
+            <img src="./images/icon-cart.svg" class="cart-icon" />
+            <img
+              src="./images/image-avatar.png"
+              class="w-8 h-8 hover:border-primary-orange border-2 rounded-full cursor-pointer"
+            />
+          </div>
+           <!-- Cart for Items  -->
+      <div
+      class="cart-box md:w-1/3 md:top-14 w-full md:h-auto p-6 absolute right-0 top-16  bg-white
+        shadow-2xl hidden z-50"
+    >
+      <p class="flex top-2 left-5 font-bold pb-8 border-b-2">Cart</p>
+
+
+      <div class="flex flex-col gap-4">
+        <!-- cart-img-1 -->
+      <div class="cart-img-1 flex items-center mt-2 gap-3 py-3 hidden">
+        <div>
+        <img src="./images/image-product-1-thumbnail.jpg" class="w-10 h-10 rounded-sm" />
+      </div>
+      <div class="flex flex-col">
+      <div class="text-neutral-darkGrayishBlue text-sm">Fall Limited Edition Sneakers</div>
+      <div class="flex gap-2">
+        <div class="text-neutral-darkGrayishBlue">$<span class="price-1">125.00</span></div>
+          <div class="text-neutral-darkGrayishBlue">x<span class="count-1"></span></div>
+            <div class="font-bold">$<span class="total-1">375.00</span></div>
+          </div>
+      </div>
+      <div>
+        <img src="./images/icon-delete.svg" class="cursor-pointer delete-icon" />
+      </div>
+      </div>
+            
+      <div>
+      <p class="flex justify-center empty-msg mt-4 py-8">Your cart is empty</p>
+      <button class="bg-primary-orange flex justify-center items-center w-full py-2 rounded-md font-bold cursor-pointer checkout-btn hidden">Checkout</button>
+    </div>
+    </div>
+  </div>
+
+        
+        </div>
+        
+      </nav>
+      <!-- Navbar for Mobile -->
+      <div class="mobile-view-list z-50 font-bold list-none bg-white absolute top-0 -translate-x-[100%] bottom-0 h-full w-1/2 p-6">
+        <img src="./images/icon-close.svg" class="cursor-pointer close-btn" />
+        <div class="pt-8">
+        <li>Collections</li>
+        <li>Men</li>
+        <li>Women</li>
+        <li>About</li>
+        <li>Contact</li>
+      </div>
+      </div>
+     
+      <!-- Product-Details-Container -->
+      <div
+        class="md:flex md:flex-row flex flex-col md:justify-center items-center justify-center"
+      >
+      <!--Apply carousal -->
+        <div class="relative md:w-1/2 flex flex-col justify-center items-center">
+            <div class="md:hidden top-44 bg-white w-8 h-8 rounded-full flex justify-center items-center absolute z-40 left-4">
+              <img src="./images/icon-previous.svg" class="btn-left flex justify-center items-center " />
+            </div>
+            <div class="md:hidden z-40 top-44 bg-white w-8 h-8 rounded-full flex justify-center items-center absolute right-4 ">
+              <img src="./images/icon-next.svg" class="btn-right flex justify-center items-center" />
+            </div>
+            <!-- Mobile View Images -->
+            <div class="slider overflow-hidden md:hidden flex relative">
+          <img
+            src="./images/image-product-1.jpg"
+            class="slide mt-4 md:hidden"
+          />
+          <img src="./images/image-product-2.jpg" class="slide md:hidden  absolute mt-4" />
+          <img src="./images/image-product-3.jpg" class="slide  absolute md:hidden  -top-0 mt-4" />
+            <img src="./images/image-product-4.jpg" class="slide absolute md:hidden -top-0 mt-4" />  
+        </div>
+
+        <!-- ///// Carousal images for desktop view -->
+        <div class="flex relative md:block hidden">
+          <img
+            src="./images/image-product-1.jpg"
+            class="product-1 product-all mt-4 md:w-80 md:rounded-lg"
+          />
+          <img src="./images/image-product-2.jpg" class="hidden product-all product-2 -top-0 mt-4 md:w-80 md:rounded-lg" />
+          <img src="./images/image-product-3.jpg" class="hidden product-all product-3 -top-0 mt-4 md:w-80 md:rounded-lg" />
+            <img src="./images/image-product-4.jpg" class="hidden product-all product-4 -top-0 mt-4 md:w-80 md:rounded-lg" />  
+        </div>
+      
+          <div class="md:flex md:mt-8 md:gap-6 hidden">
+            <img
+              src="./images/image-product-1-thumbnail.jpg"
+              class="thumnail-img-1 w-16 h-16 rounded-lg hover:border-primary-orange border-2"
+            />
+            <img
+              src="./images/image-product-2-thumbnail.jpg"
+              class="thumnail-img-2 w-16 h-16 rounded-lg hover:border-primary-orange border-2"
+            />
+            <img
+              src="./images/image-product-3-thumbnail.jpg"
+              class="thumnail-img-3 w-16 h-16 rounded-lg hover:border-primary-orange border-2 "
+            />
+            <img
+              src="./images/image-product-4-thumbnail.jpg"
+              class="thumnail-img-4 w-16 h-16 rounded-lg hover:border-primary-orange border-2 "
+            />
+          </div>
+        </div>
+        <!-- Scaled Images -->
+        <div class="scaled-images h-screen w-screen absolute  left-0 right-0 md:inset-0 bottom-0 flex flex-col items-center justify-center bg-opacity-50 bg-black backdrop-blur-sm hidden">
+          <div class="relative max-w-xs flex ">
+          
+            <img src="./images/icon-close.svg" class="close-icon ficon  w-4 h-4 right-0 -top-6 z-50 absolute cursor-pointer" fill="#ffffff" />
+
+            <div class="flex w-full overflow-hidden relative">
+             
+         <img src="./images/image-product-1.jpg" class="slide-up  z-30 md:rounded-lg" />
+         <img src="./images/image-product-2.jpg" class="slide-up absolute  z-30 md:rounded-lg"  />
+         <img src="./images/image-product-3.jpg" class="slide-up absolute  z-30 md:rounded-lg" />
+         <img src="./images/image-product-4.jpg" class="slide-up absolute  z-30 md:rounded-lg" />
+        </div>
+         <div class="btn-left-side top-1/2 bg-white w-8 h-8 rounded-full flex justify-center items-center absolute z-50 left-0 -translate-x-1/2">
+          <img src="./images/icon-previous.svg" class="flex justify-center items-center " />
+        </div>
+        <div class="btn-right-side z-50 top-1/2 bg-white w-8 h-8 rounded-full flex justify-center items-center right-0 absolute translate-x-1/2">
+          <img src="./images/icon-next.svg" class=" flex justify-center items-center" />
+        </div>
+        </div>
+
+         <div class="md:flex md:mt-8 md:gap-6 hidden md:w-20 flex justify-center items-center">
+          <img
+            src="./images/image-product-1-thumbnail.jpg"
+            class="thumnail-img-1 w-14 h-14 rounded-lg hover:border-primary-orange border-2"
+          />
+          <img
+            src="./images/image-product-2-thumbnail.jpg"
+            class="thumnail-img-2 w-14 h-14 rounded-lg hover:border-primary-orange border-2"
+          />
+          <img
+            src="./images/image-product-3-thumbnail.jpg"
+            class="thumnail-img-3 w-14 h-14 rounded-lg hover:border-primary-orange border-2 "
+          />
+          <img
+            src="./images/image-product-4-thumbnail.jpg"
+            class="thumnail-img-4 w-14 h-14 rounded-lg hover:border-primary-orange border-2 "
+          />
+        
+        </div>
+
+        </div>
+
+        <div class="md:w-1/2 my-auto space-y-4 p-6">
+          <h3
+            class="text-neutral-darkGrayishBlue font-semibold uppercase -mb-4"
+          >
+            Sneaker Company
+          </h3>
+          <h1 class="max-w-sm font-bold text-4xl">
+            Fall Limited Edition Sneakers
+          </h1>
+          <p class="max-w-xs text-neutral-darkGrayishBlue">
+            your perfect casual wear companion. Featuring a durable rubber outer
+            sole, they’ll withstand everything the weather can offer.
+          </p>
+          <div class="md:flex md:flex-col flex md:gap-2 md:w-12">
+            <div class="flex gap-6 h-6 items-center">
+              <p class="font-bold text-black text-2x">$125.00</p>
+              <p
+                class="bg-black text-white px-3 rounded-md flex justify-center items-center"
+              >
+                50%
+              </p>
+            </div>
+            <div
+              class="line-through ml-auto text-neutral-darkGrayishBlue font-semibold"
+            >
+              $250.00
+            </div>
+          </div>
+          <div class="md:flex md:flex-row flex flex-col gap-8">
+            <div
+              class="bg-neutral-lightGrayishBlue py-2 px-8 gap-8 flex justify-between items-center"
+            >
+            <img src="./images/icon-minus.svg" class="cursor-pointer minus-icon" />
+              <p class="display-count">0</p>
+              <img src="./images/icon-plus.svg" class="cursor-pointer plus-icon" />
+            </div>
+            <button
+              class="add-to-cart bg-primary-orange cursor-pointer hover:bg-orange-400 flex gap-5 py-3 px-12 rounded-lg items-center justify-center"
+            >
+              <img src="./images/icon-cart.svg" class="w-4 h-4" />
+              <p class="text-black font-bold">Add to Cart</p>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--  These low-profile sneakers are
+      
+          0 Add to cart
+     -->
+          <script src="./script.js"></script>
+  </body>
+</html>
