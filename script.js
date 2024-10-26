@@ -65,6 +65,9 @@ minusIcon.addEventListener("click", () => {
     displayCount.textContent = count;
     navCartCount.textContent = count;
   }
+  if (count === 0) {
+    window.location.reload();
+  }
   itemCalculation(count);
 });
 
@@ -204,8 +207,7 @@ productAll.forEach((item) => {
 });
 
 closeIcon.addEventListener("click", () => {
-  // window.location.reload();
-  closeIcon.classList.add("icon");
+  window.location.reload();
 });
 
 checkoutBtn.addEventListener("click", () => {
